@@ -52,7 +52,7 @@ const cards = ref([
           <span class="font-light text-neutral-500 text-sm">$899.00</span>
         </template>
 
-        <img src="https://picsum.photos/id/250/300/300" alt="Demo Image" class="w-full rounded-lg" >
+        <img src="/camera.jpg" alt="Demo Image" class="w-full rounded-lg" >
       </UPageCard>
     </UPageGrid>
   </UPageSection>

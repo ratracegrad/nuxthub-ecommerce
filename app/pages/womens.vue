@@ -52,11 +52,11 @@ const cards = ref([
           <span class="font-light text-neutral-500 text-sm">$250.00</span>
         </template>
 
-        <NuxtImg
-          src="https://picsum.photos/id/21/300/300"
+        <img
+          src="/pumps.jpg"
           alt="Demo Image"
           class="w-full rounded-lg"
-        />
+        >
       </UPageCard>
     </UPageGrid>
   </UPageSection>
