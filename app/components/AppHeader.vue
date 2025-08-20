@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const items = computed(() => [{
   label: 'Womens',
-  to: '/womens',
+  to: '/womens'
 }, {
   label: 'Mens',
   to: '/mens'
@@ -23,6 +23,8 @@ const items = computed(() => [{
     <UNavigationMenu
       :items="items"
       variant="link"
+      highlight
+      highlight-color="primary"
     />
 
     <template #right>
