@@ -1,46 +1,49 @@
 <script setup lang="ts">
+const router = useRouter()
+
+console.log(router)
 const cards = ref([
   {
-    title: 'Timeless Pumps',
-    description: 'A pair of elegant white mid-heel pumps',
+    title: 'Cream Blouse',
+    description: 'A versatile cream blouse with a soft V-neckline and long sleeves, perfect for pairing with jeans or skirts for an effortless everyday look',
+    price: '$120.00',
+    image: '/womens/creamBlouse.png',
   },
   {
-    title: 'Timeless Pumps',
-    description: 'A pair of elegant white mid-heel pumps',
+    title: 'Lavender Blouse',
+    description: 'A light lavender button-down blouse with a tailored feminine fit',
+    price: '$97.00',
+    image: '/womens/lavenderBlouse.jpg',
   },
   {
-    title: 'Timeless Pumps',
-    description: 'A pair of elegant white mid-heel pumps',
+    title: 'Black T-Shirt',
+    description: 'A simple black short-sleeve T-shirt made from soft cotton fabric',
+    price: '$48.00',
+    image: '/womens/blackTshirt.jpg',
   },
   {
-    title: 'Timeless Pumps',
-    description: 'A pair of elegant white mid-heel pumps',
+    title: 'White Long-Sleeve Top',
+    description: 'A fitted white long-sleeve top with a round neckline for a clean look',
+    price: '$62.00',
+    image: '/womens/whiteTop.jpg',
   },
   {
-    title: 'Timeless Pumps',
-    description: 'A pair of elegant white mid-heel pumps',
+    title: 'Beige Skirt',
+    description: 'A high-waisted beige skirt with a flowing A-line silhouette',
+    price: '$240.00',
+    image: '/womens/beigeSkirt.png',
   },
   {
-    title: 'Timeless Pumps',
-    description: 'A pair of elegant white mid-heel pumps',
+    title: 'Rust Blouse',
+    description: 'A stylish rust-colored blouse with subtle pleat and tie detailing',
+    price: '$65.00',
+    image: '/womens/rustBlouse.png',
   },
-  {
-    title: 'Timeless Pumps',
-    description: 'A pair of elegant white mid-heel pumps',
-  },
-  {
-    title: 'Timeless Pumps',
-    description: 'A pair of elegant white mid-heel pumps',
-  },
-  {
-    title: 'Timeless Pumps',
-    description: 'A pair of elegant white mid-heel pumps',
-  }
 ])
 </script>
 
 <template>
-  <UPageSection title="Women's Clothing">
+  <UPageSection title="Women's Clothing" description="From timeless basics to modern favorites, explore clothing made to fit your lifestyle">
     <UPageGrid>
       <UPageCard
         v-for="(card, index) in cards"
@@ -49,16 +52,15 @@ const cards = ref([
         reverse
       >
         <template #footer>
-          <span class="font-light text-neutral-500 text-sm">$250.00</span>
+          <span class="font-light text-neutral-500 text-sm">{{ card.price }}</span>
         </template>
 
-        <img
-          src="/pumps.jpg"
-          alt="Demo Image"
+        <NuxtImg
+          :src="card.image"
+          :alt="card.title"
           class="w-full rounded-lg"
-        >
+        />
       </UPageCard>
     </UPageGrid>
   </UPageSection>
 </template>
-

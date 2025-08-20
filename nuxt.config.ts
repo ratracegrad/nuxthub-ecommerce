@@ -1,11 +1,32 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
 
-  css: ['~/assets/css/main.css'],
-
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/image',
+    '@nuxt/ui-pro',
+    '@nuxthub/core'
+  ],
 
   devtools: { enabled: true },
+
+  css: ['~/assets/css/main.css'],
+  compatibilityDate: '2025-07-15',
+
+  nitro: {
+    prerender: {
+      routes: [
+        '/'
+      ]
+    },
+    experimental: {
+      tasks: true
+    }
+  },
+
+  hub: {
+    database: true
+  },
 
   eslint: {
     config: {
@@ -14,15 +35,5 @@ export default defineNuxtConfig({
         braceStyle: '1tbs'
       }
     }
-  },
-
-  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui-pro'],
-
-  nitro: {
-    prerender: {
-      routes: [
-        '/'
-      ]
-    }
-  },
+  }
 })

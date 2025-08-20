@@ -3,11 +3,11 @@ const items = computed(() => [{
   label: 'Womens',
   to: '/womens',
 }, {
-  label: 'Watches',
-  to: '/watches'
+  label: 'Mens',
+  to: '/mens'
 }, {
-  label: 'Cameras',
-  to: '/cameras'
+  label: 'Tech',
+  to: '/tech'
 }
 ])
 </script>
