@@ -1,58 +1,33 @@
 <script setup lang="ts">
-const cards = ref([
-  {
-    title: 'Olive Jacket',
-    description: 'A casual olive over shirt jacket with button front and chest pockets',
-    price: '$300.00',
-    image: '/mens/oliveJacket.png',
-  },
-  {
-    title: 'Denim-Style Blue Shirt',
-    description: 'A blue long-sleeve shirt with a denim-inspired texture and finish',
-    price: '$97.00',
-    image: '/mens/blueDenimShirt.png',
-  },
-  {
-    title: 'Light Blue Pinstriped Shirt',
-    description: 'A professional button-down shirt in light blue with thin white pinstripes',
-    price: '$150.00',
-    image: '/mens/bluePinstripe.png',
-  },
-  {
-    title: 'Brown Cargo Shorts',
-    description: 'Comfortable brown cargo shorts with multiple utility pockets',
-    price: '$50.00',
-    image: '/mens/brownCargoShorts.png',
-  },
-  {
-    title: 'Classic Blue Jeans',
-    description: 'Straight-leg blue jeans with a traditional five-pocket design',
-    price: '$298.00',
-    image: '/mens/bluejeans.png',
-  },
-])
+const route = useRoute()
+const category = computed(() => route.name)
+
+const {data: products} = await useFetch(`/api/products/${category.value}`)
 </script>
 
 <template>
   <UPageSection title="Men's Clothing" description="From tailored shirts to casual wear, explore clothing designed for comfort and confidence">
     <UPageGrid>
       <UPageCard
-        v-for="(card, index) in cards"
+        v-for="(product, index) in products"
         :key="index"
-        v-bind="card"
+        v-bind="product"
         reverse
       >
         <template #footer>
-          <span class="font-light text-neutral-500 text-sm">{{ card.price }}</span>
+          <span class="font-light text-neutral-500 text-sm">{{ new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(product.price/100) }}</span>
         </template>
 
         <NuxtImg
-          :src="card.image"
-          :alt="card.title"
+          :src="product.image"
+          :alt="product.name"
           class="w-full rounded-lg"
         />
+        <template #title>
+          <div class="text-lg font-bold"  >{{ product.name }}</div>
+          <div class="text-sm text-neutral-500">{{ product.shortDescription }}</div>
+        </template>
       </UPageCard>
     </UPageGrid>
   </UPageSection>
 </template>
-

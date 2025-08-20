@@ -1,65 +1,32 @@
 <script setup lang="ts">
-const router = useRouter()
+const route = useRoute()
+const category = computed(() => route.name)
 
-console.log(router)
-const cards = ref([
-  {
-    title: 'Cream Blouse',
-    description: 'A versatile cream blouse with a soft V-neckline and long sleeves, perfect for pairing with jeans or skirts for an effortless everyday look',
-    price: '$120.00',
-    image: '/womens/creamBlouse.png',
-  },
-  {
-    title: 'Lavender Blouse',
-    description: 'A light lavender button-down blouse with a tailored feminine fit',
-    price: '$97.00',
-    image: '/womens/lavenderBlouse.jpg',
-  },
-  {
-    title: 'Black T-Shirt',
-    description: 'A simple black short-sleeve T-shirt made from soft cotton fabric',
-    price: '$48.00',
-    image: '/womens/blackTshirt.jpg',
-  },
-  {
-    title: 'White Long-Sleeve Top',
-    description: 'A fitted white long-sleeve top with a round neckline for a clean look',
-    price: '$62.00',
-    image: '/womens/whiteTop.jpg',
-  },
-  {
-    title: 'Beige Skirt',
-    description: 'A high-waisted beige skirt with a flowing A-line silhouette',
-    price: '$240.00',
-    image: '/womens/beigeSkirt.png',
-  },
-  {
-    title: 'Rust Blouse',
-    description: 'A stylish rust-colored blouse with subtle pleat and tie detailing',
-    price: '$65.00',
-    image: '/womens/rustBlouse.png',
-  },
-])
+const {data: products} = await useFetch(`/api/products/${category.value}`)
 </script>
 
 <template>
   <UPageSection title="Women's Clothing" description="From timeless basics to modern favorites, explore clothing made to fit your lifestyle">
     <UPageGrid>
       <UPageCard
-        v-for="(card, index) in cards"
+        v-for="(product, index) in products"
         :key="index"
-        v-bind="card"
+        v-bind="product"
         reverse
       >
         <template #footer>
-          <span class="font-light text-neutral-500 text-sm">{{ card.price }}</span>
+          <span class="font-light text-neutral-500 text-sm">{{ new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(product.price/100) }}</span>
         </template>
 
         <NuxtImg
-          :src="card.image"
-          :alt="card.title"
+          :src="product.image"
+          :alt="product.name"
           class="w-full rounded-lg"
         />
+        <template #title>
+          <div class="text-lg font-bold"  >{{ product.name }}</div>
+          <div class="text-sm text-neutral-500">{{ product.shortDescription }}</div>
+        </template>
       </UPageCard>
     </UPageGrid>
   </UPageSection>

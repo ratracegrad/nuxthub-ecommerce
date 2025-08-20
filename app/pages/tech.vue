@@ -1,64 +1,33 @@
 <script setup lang="ts">
-const cards = ref([
-  {
-    title: 'Industrial Accent Headphones',
-    description: 'Over-ear headphones with brushed metal design and bold orange details',
-    price: '$375.00',
-    image: '/tech/industrialHeadphones.png',
-  },
-  {
-    title: 'Silver Over-Ear Headphones',
-    description: 'Over-ear headphones in silver with cushioned pads for comfort',
-    price: '$325.00',
-    image: '/tech/silverHeadphones.png',
-  },
-  {
-    title: 'Brown Leather Strap Watch',
-    description: 'A stainless steel wristwatch with a brown stitched leather strap',
-    price: '$497.00',
-    image: '/tech/brownWatch.png',
-  },
-  {
-    title: 'Stainless Steel Chronograph Watch',
-    description: 'A chronograph wristwatch with stainless steel bracelet and black dial.',
-    price: '$750.00',
-    image: '/tech/stainlessSteelWatch.png',
-  },
-  {
-    title: 'Aluminum Laptop Stand',
-    description: 'A minimalist silver aluminum laptop stand with a fixed angled design',
-    price: '$99.00',
-    image: '/tech/laptopStand.png',
-  },
-  {
-    title: 'Adjustable Cellphone Stand',
-    description: 'Modern aluminum cellphone stand with a hinge for adjustable positioning',
-    price: '$37.00',
-    image: '/tech/cellphoneStand.png',
-  },
-])
+const route = useRoute()
+const category = computed(() => route.name)
+
+const {data: products} = await useFetch(`/api/products/${category.value}`)
 </script>
 
 <template>
   <UPageSection title="Tech Gadgets" description="Innovative gadgets designed to keep you connected, productive, and inspired">
     <UPageGrid>
       <UPageCard
-        v-for="(card, index) in cards"
+        v-for="(product, index) in products"
         :key="index"
-        v-bind="card"
+        v-bind="product"
         reverse
       >
         <template #footer>
-          <span class="font-light text-neutral-500 text-sm">{{ card.price }}</span>
+          <span class="font-light text-neutral-500 text-sm">{{ new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(product.price/100) }}</span>
         </template>
 
         <NuxtImg
-          :src="card.image"
-          :alt="card.title"
+          :src="product.image"
+          :alt="product.name"
           class="w-full rounded-lg"
         />
+        <template #title>
+          <div class="text-lg font-bold"  >{{ product.name }}</div>
+          <div class="text-sm text-neutral-500">{{ product.shortDescription }}</div>
+        </template>
       </UPageCard>
     </UPageGrid>
   </UPageSection>
 </template>
-
