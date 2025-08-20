@@ -1,24 +1,73 @@
 {
-  "name": "nuxt-app",
+  "name": "nuxthub eCommerce template",
+  "version": "1.0.0",
+  "description": "NuxtHub eCommerce Template",
+  "author": {
+    "name": "Jennifer Bland",
+    "email": "ratracegrad@gmail.com",
+    "url": "https://github.com/ratracegrad"
+  },
+  "license": "MIT",
+  "homepage": "https://nuxthub.com/ecommerce-template",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ratracegrad/nuxthub-ecommerce.git"
+  },
   "type": "module",
   "private": true,
+  "keywords": [
+    "eCommerce",
+    "nuxthub",
+    "nuxtjs",
+    "nuxt",
+    "nuxt 4",
+    "drizzle orm",
+    "nuxt ui pro",
+    "typescript"
+  ],
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@nuxt/eslint": "1.8.0",
-    "@nuxt/image": "1.11.0",
+    "@nuxt/image": "1.10.0",
     "@nuxt/ui-pro": "^3.3.2",
+    "@nuxthub/core": "0.9.0",
+    "drizzle-kit": "^0.31.4",
+    "drizzle-orm": "^0.44.4",
     "eslint": "^9.33.0",
+    "h3-zod": "^0.5.3",
     "nuxt": "^4.0.3",
     "vue": "^3.5.18",
-    "vue-router": "^4.5.1"
+    "vue-router": "^4.5.1",
+    "zod": "^4.0.17"
   },
-  "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748"
+  "devDependencies": {
+    "@nuxt/devtools": "^2.6.2",
+    "@nuxt/eslint": "1.8.0",
+    "typescript": "^5.9.2",
+    "wrangler": "^4.31.0"
+  },
+  "packageManager": "pnpm@10.14.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "sharp",
+      "esbuild",
+      "@tailwindcss/oxide",
+      "vue-demi",
+      "unrs-resolver",
+      "workerd",
+      "@parcel/watcher"
+    ]
+  }
 }
