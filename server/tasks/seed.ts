@@ -87,6 +87,7 @@ export default defineTask({
         createdAt: new Date(),
         updatedAt: new Date()
       },
+
       {
         name: 'Olive Jacket',
         shortDescription: 'A casual olive over shirt jacket with button front and chest pockets',
@@ -154,6 +155,7 @@ export default defineTask({
         createdAt: new Date(),
         updatedAt: new Date()
       },
+
       {
         name: 'Industrial Accent Headphones',
         shortDescription: 'Over-ear headphones with brushed metal design and bold orange details',
