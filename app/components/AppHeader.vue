@@ -1,22 +1,29 @@
 <script setup lang="ts">
-const items = computed(() => [{
-  label: 'Womens',
-  to: '/womens'
-}, {
-  label: 'Mens',
-  to: '/mens'
-}, {
-  label: 'Tech',
-  to: '/tech'
-}
-])
+const items = [
+  {
+    label: 'Home',
+    to: '/'
+  }
+]
+
+const { data: categories } = await useFetch('/api/categories')
+
+const uniqueCategories = categories.value?.map(category => category.category)
+
+uniqueCategories?.forEach((category) => {
+  items.push({
+    label: category.charAt(0).toUpperCase()
+      + category.slice(1),
+    to: `/${category}`
+  })
+})
 </script>
 
 <template>
   <UHeader>
     <template #left>
       <NuxtLink to="/">
-        <span class="text-2xl font-bold">NuxtHub eCommerce</span>
+        <LogoPro />
       </NuxtLink>
     </template>
 
@@ -28,12 +35,14 @@ const items = computed(() => [{
     />
 
     <template #right>
-      <UColorModeButton />
+      <UColorModeButton class="hidden lg:block" />
     </template>
 
     <template #body>
       <UNavigationMenu
         :items="items"
+        highlight
+        highlight-color="primary"
         orientation="vertical"
         class="-mx-2.5"
       />

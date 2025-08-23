@@ -12,6 +12,14 @@ export const products = sqliteTable('products', {
   color: text('color', { mode: 'json' }).$type<string[]>(),
   image: text('image').notNull(),
   category: text('category').notNull(),
+  featured: integer('featured', { mode: 'boolean' }).default(false),
   createdAt: integer('created_at', { mode: 'timestamp' }).default(sql`CURRENT_TIMESTAMP`),
   updatedAt: integer('updated_at', { mode: 'timestamp' }).default(sql`CURRENT_TIMESTAMP`),
 })
+
+export const newsletter = sqliteTable("newsletter", {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  email: text("email").notNull(),
+  createdAt: integer('created_at', { mode: 'timestamp' }).default(sql`CURRENT_TIMESTAMP`),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }).default(sql`CURRENT_TIMESTAMP`),
+});

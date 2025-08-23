@@ -15,7 +15,8 @@ export default defineTask({
         size: ['S', 'M', 'L'],
         color: ['Cream'],
         image: '/womens/creamBlouse.png',
-        category: 'Womens',
+        category: 'womens',
+        featured: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -28,7 +29,8 @@ export default defineTask({
         size: ['M', 'L', 'XL'],
         color: ['Lavender'],
         image: '/womens/lavenderBlouse.jpg',
-        category: 'Womens',
+        category: 'womens',
+        featured: true,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -41,7 +43,7 @@ export default defineTask({
         size: ['XS', 'S', 'M', 'L', 'XL'],
         color: ['Black', 'White', 'Gray'],
         image: '/womens/blackTshirt.jpg',
-        category: 'Womens',
+        category: 'womens',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -54,7 +56,7 @@ export default defineTask({
         size: ['S', 'XL'],
         color: ['White'],
         image: '/womens/whiteTop.jpg',
-        category: 'Womens',
+        category: 'womens',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -67,7 +69,7 @@ export default defineTask({
         size: ['8', '10', '12', '14', '16'],
         color: ['Beige', 'Hazel', 'Black'],
         image: '/womens/beigeSkirt.png',
-        category: 'Womens',
+        category: 'womens',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -80,7 +82,8 @@ export default defineTask({
         size: ['S', 'M', 'L', '2x'],
         color: ['Rust', 'Charcoal'],
         image: '/womens/rustBlouse.png',
-        category: 'Womens',
+        category: 'womens',
+        featured: true,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -93,7 +96,7 @@ export default defineTask({
         size: ['S', 'M', 'L', '2x'],
         color: ['Olive', 'Charcoal'],
         image: '/mens/oliveJacket.png',
-        category: 'Mens',
+        category: 'mens',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -106,7 +109,7 @@ export default defineTask({
         size: ['S', 'M', 'L', '2x'],
         color: ['Blue', 'Charcoal'],
         image: '/mens/blueDenimShirt.png',
-        category: 'Mens',
+        category: 'mens',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -119,7 +122,8 @@ export default defineTask({
         size: ['S', 'M', 'L', '2x'],
         color: ['Light Blue', 'Charcoal'],
         image: '/mens/bluePinstripe.png',
-        category: 'Mens',
+        category: 'mens',
+        featured: true,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -132,7 +136,7 @@ export default defineTask({
         size: ['S', 'M', 'L', '2x'],
         color: ['Brown', 'Charcoal'],
         image: '/mens/brownCargoShorts.png',
-        category: 'Mens',
+        category: 'mens',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -145,7 +149,8 @@ export default defineTask({
         size: ['S', 'M', 'L', '2X'],
         color: ['Blue', 'Charcoal'],
         image: '/mens/bluejeans.png',
-        category: 'Mens',
+        category: 'mens',
+        featured: true,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -158,7 +163,7 @@ export default defineTask({
         size: ['Reg'],
         color: ['Orange', 'Charcoal'],
         image: '/tech/industrialHeadphones.png',
-        category: 'Tech',
+        category: 'tech',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -171,7 +176,8 @@ export default defineTask({
         size: ['Reg'],
         color: ['Silver', 'Charcoal'],
         image: '/tech/silverHeadphones.png',
-        category: 'Tech',
+        category: 'tech',
+        featured: true,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -184,7 +190,7 @@ export default defineTask({
         size: ['10mm', '12mm', '14mm'],
         color: ['Brown', 'Charcoal'],
         image: '/tech/brownWatch.png',
-        category: 'Tech',
+        category: 'tech',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -197,7 +203,8 @@ export default defineTask({
         size: ['10mm', '12mm', '14mm'],
         color: ['Black', 'Charcoal'],
         image: '/tech/stainlessSteelWatch.png',
-        category: 'Tech',
+        category: 'tech',
+        featured: true,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -210,7 +217,7 @@ export default defineTask({
         size: ['Reg'],
         color: ['Silver'],
         image: '/tech/laptopStand.png',
-        category: 'Tech',
+        category: 'tech',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -223,7 +230,7 @@ export default defineTask({
         size: [],
         color: ['Silver'],
         image: '/tech/cellphoneStand.png',
-        category: 'Tech',
+        category: 'tech',
         createdAt: new Date(),
         updatedAt: new Date()
       }

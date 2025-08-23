@@ -8,6 +8,27 @@
       "when": 1755698386567,
       "tag": "0000_daily_thunderbird",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1755865122828,
+      "tag": "0001_legal_puppet_master",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1755974003209,
+      "tag": "0002_safe_maestro",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1755975089545,
+      "tag": "0003_bouncy_wraith",
+      "breakpoints": true
     }
   ]
 }
