@@ -4,19 +4,19 @@ const items = [
     label: 'Home',
     to: '/'
   },
-  {
-    label: 'Womens',
-    to: '/womens'
-  },
-  {
-    label: 'Mens',
-    to: '/mens'
-  },
-  {
-    label: 'Tech',
-    to: '/tech'
-  }
 ]
+
+const { data: categories } = await useFetch('/api/categories')
+
+const uniqueCategories = categories.value?.map(category => category.category)
+
+uniqueCategories?.forEach((category) => {
+  items.push({
+    label: category.charAt(0).toUpperCase()
+      + category.slice(1),
+    to: `/${category}`
+  })
+})
 </script>
 
 <template>
