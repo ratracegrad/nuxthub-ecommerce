@@ -1,4 +1,4 @@
-// import { eq } from 'drizzle-orm'
+import { eq } from 'drizzle-orm'
 import { useValidatedParams, zh } from 'h3-zod'
 
 export default eventHandler(async (event) => {
@@ -12,5 +12,5 @@ export default eventHandler(async (event) => {
     .where(eq(tables.products.id, id))
     .all()
 
-  return products[0]
+  return products[0] as Products | null
 })

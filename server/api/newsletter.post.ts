@@ -1,7 +1,6 @@
 import { useValidatedBody, z } from 'h3-zod'
 
 export default eventHandler(async (event) => {
-  // const { email } = await readBody(event)
   const { email } = await useValidatedBody(event, {
     email: z.string()
   })

@@ -7,5 +7,5 @@ export default eventHandler(async (event) => {
     .where(eq(tables.products.category, category))
     .all()
 
-  return products
+  return products as Products[]
 })
