@@ -2,7 +2,11 @@
 
 This starter template is a NuxtHub template that demonstrates the functionality of an eCommerce store with a backend database.
 
-Watch the demo video here:
+## Demo Video
+
+Watch the demo video here: (be sure to turn on volume)
+
+https://github.com/user-attachments/assets/4992d551-1ac3-413e-9ddc-ddba5d8c66e6
 
 ## Features
 
@@ -31,6 +35,7 @@ Watch the demo video here:
 Copy the `.env.example` file to `.env` and fill in the values.
 
 NUXT_HUB_PROJECT_KEY=<YOUR_KEY_HERE>
+
 NUXT_UI_PRO_LICENSE=<YOUR_KEY_HERE>
 
 ## Development
