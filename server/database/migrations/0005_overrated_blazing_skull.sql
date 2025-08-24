@@ -1,0 +1,1 @@
+DROP INDEX `newsletter_email_unique`;

@@ -39,6 +39,6 @@ const handleClick = (id: number) => {
           <span class="font-semibold text-primary text-sm">{{ new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(product.price/100) }}</span>
         </template>
       </UPageCard>
-    </UPageGrid>>
+    </UPageGrid>
   </UPageSection>
 </template>
