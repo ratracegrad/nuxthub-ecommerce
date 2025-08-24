@@ -1,75 +1,64 @@
-# Nuxt Minimal Starter
+# NuxtHub eCommerce Starter Template
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This starter template is a NuxtHub template that demonstrates the functionality of an eCommerce store with a backend database.
+
+Watch the demo video here:
+
+## Features
+
+- NuxtHub Database using Cloudflare R1
+- NuxtUI Pro for the UI
+- Light and Dark mode
+- Typescript
+- Eslint
+
+## Stack
+
+- Nuxt v4
+- NuxtHub
+- NuxtUI Pro
 
 ## Setup
 
-Make sure to install dependencies:
+1. Clone this repository to your local machine.
+2. Install dependencies using the command `pnpm install` or your favorite package manager.
+3. Run the application with the command `pnpm dev` or your favorite package manager.
+
+> If you don't have pnpm installed, run: `corepack enable pnpm`
+
+## Environment Variables
+
+Copy the `.env.example` file to `.env` and fill in the values.
+
+NUXT_HUB_PROJECT_KEY=<YOUR_KEY_HERE>
+NUXT_UI_PRO_LICENSE=<YOUR_KEY_HERE>
+
+## Development
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Seeding the database
 
-Build the application for production:
+To get your store up and running, you need to seed the database with some products.
+
+I have included a seed script in the `server/tasks` folder.
+
+To run the seed task, start your dev server and open the Nuxt DevTools. Go to Tasks and you will see the `db:seed` task ready to run. This will add the seed data to your database and give you products to work with.
+
+## Deploy
+
+You can deploy this project on your Cloudflare account for free and with zero configuration using [NuxtHub](https://hub.nuxt.com).
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+npx nuxthub deploy
 ```
 
-Locally preview production build:
+It's also possible to leverage Cloudflare Pages CI for deploying, learn more about the different options on https://hub.nuxt.com/docs/getting-started/deploy
 
-```bash
-# npm
-npm run preview
+Learn more about remote storage on https://hub.nuxt.com/docs/getting-started/remote-storage
 
-# pnpm
-pnpm preview
+## Contribution
 
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Contributions are welcome! Feel free to open an issue to report a bug or submit a feature request via a pull request.
