@@ -12,12 +12,12 @@ export default eventHandler(async (event) => {
       createdAt: new Date(),
       updatedAt: new Date()
     })
-    .onConflictDoUpdate({
-      target: [tables.newsletter.email],
-      set: {
-        updatedAt: new Date()
-      }
-    })
+    // .onConflictDoUpdate({
+    //   target: [tables.newsletter.email],
+    //   set: {
+    //     updatedAt: new Date()
+    //   }
+    // })
     .returning()
     .get()
 
