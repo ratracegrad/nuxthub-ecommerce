@@ -4,5 +4,5 @@ export default eventHandler(async () => {
     .from(tables.products)
     .all()
 
-  return categories
+  return categories as { category: string }[]
 })
