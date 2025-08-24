@@ -9,10 +9,10 @@ export default defineEventHandler(async (event) => {
 
     return emailEntry
   } catch (error) {
-    console.error('ERROR',error)
+    console.error('ERROR', error)
     throw createError({
       statusCode: 500,
-      statusMessage: error.message ?? 'Failed to add email to newsletter',
+      statusMessage: error.message ?? 'Failed to add email to newsletter'
     })
   }
 })

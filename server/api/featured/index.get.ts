@@ -1,9 +1,14 @@
-export default eventHandler(async () => {
-  const products = await useDrizzle()
-    .select()
-    .from(tables.products)
-    .where(eq(tables.products.featured, 1))
-    .all()
+import { products } from '~~/server/database/schema'
+import { eq } from 'drizzle-orm'
 
-  return products
+export default eventHandler(async () => {
+  console.log('start getting featured products')
+  const featuredProducts = await useDrizzle()
+    .select()
+    .from(products)
+    .where(eq(products.featured, true))
+    .all()
+  console.log('featuredProducts', featuredProducts)
+
+  return featuredProducts
 })

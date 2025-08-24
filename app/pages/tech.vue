@@ -2,7 +2,7 @@
 const route = useRoute()
 const category = route.name as string
 
-const {data: products} = await useFetch(`/api/products/${category}`)
+const { data: products } = await useFetch(`/api/products/${category}`)
 
 const handleClick = (id: number) => {
   navigateTo(`/details/${id}`)
