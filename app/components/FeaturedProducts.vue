@@ -24,7 +24,7 @@
 <script setup lang="ts">
 console.log('FeaturedProducts')
 const { data: products } = await useFetch('/api/featured')
-console.log('products', products)
+console.log('products frontend', products.value)
 
 const handleClick = (id: number) => {
   navigateTo(`/details/${id}`)
