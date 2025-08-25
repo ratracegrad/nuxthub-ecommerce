@@ -43,6 +43,13 @@
       "when": 1756053848999,
       "tag": "0005_overrated_blazing_skull",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1756142686927,
+      "tag": "0006_living_pepper_potts",
+      "breakpoints": true
     }
   ]
 }

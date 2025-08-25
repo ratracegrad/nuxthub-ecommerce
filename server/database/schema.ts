@@ -19,7 +19,7 @@ export const products = sqliteTable('products', {
 
 export const newsletter = sqliteTable('newsletter', {
   id: integer('id').primaryKey({ autoIncrement: true }),
-  email: text('email').notNull(),
+  email: text('email').unique().notNull(),
   createdAt: integer('created_at', { mode: 'timestamp' }).default(sql`CURRENT_TIMESTAMP`),
   updatedAt: integer('updated_at', { mode: 'timestamp' }).default(sql`CURRENT_TIMESTAMP`)
 })
