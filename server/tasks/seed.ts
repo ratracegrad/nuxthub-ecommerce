@@ -5,7 +5,7 @@ export default defineTask({
   },
   async run() {
     console.log('Running DB seed task...')
-    const products = [
+    const womensProducts = [
       {
         name: 'Cream Blouse',
         shortDescription: 'A versatile cream blouse with a soft V-neckline and long sleeves, perfect for pairing with jeans or skirts for an effortless everyday look',
@@ -86,7 +86,10 @@ export default defineTask({
         featured: true,
         createdAt: new Date(),
         updatedAt: new Date()
-      },
+      }
+
+    ]
+    const mensProducts = [
       {
         name: 'Olive Jacket',
         shortDescription: 'A casual olive over shirt jacket with button front and chest pockets',
@@ -153,7 +156,9 @@ export default defineTask({
         featured: true,
         createdAt: new Date(),
         updatedAt: new Date()
-      },
+      }
+    ]
+    const techProducts = [
       {
         name: 'Industrial Accent Headphones',
         shortDescription: 'Over-ear headphones with brushed metal design and bold orange details',
@@ -235,7 +240,16 @@ export default defineTask({
         updatedAt: new Date()
       }
     ]
-    await useDrizzle().insert(tables.products).values(products)
+    console.log('Inserting womens products...')
+    await useDrizzle().insert(tables.products).values(womensProducts)
+
+    console.log('Inserting mens products...')
+    await useDrizzle().insert(tables.products).values(mensProducts)
+
+    console.log('Inserting tech products...')
+    await useDrizzle().insert(tables.products).values(techProducts)
+    
+    console.log('Finished seeding database')
     return { result: 'success' }
   }
 })
