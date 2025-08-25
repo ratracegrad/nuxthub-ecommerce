@@ -248,7 +248,7 @@ export default defineTask({
 
     console.log('Inserting tech products...')
     await useDrizzle().insert(tables.products).values(techProducts)
-    
+
     console.log('Finished seeding database')
     return { result: 'success' }
   }

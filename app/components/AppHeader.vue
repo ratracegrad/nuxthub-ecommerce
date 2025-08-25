@@ -3,7 +3,7 @@ const items = [
   {
     label: 'Home',
     to: '/'
-  },
+  }
 ]
 
 const { data: categories } = await useFetch('/api/categories')
